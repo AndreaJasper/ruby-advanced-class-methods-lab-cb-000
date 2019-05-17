@@ -10,4 +10,13 @@ class Song
     self.class.all << self
   end
 
+  def self.create(name)
+    song = self.new
+    song.name = name
+    @@all << song
+  end
+
+  def self.print_all
+    self.all.each{|song| puts "#{song.name}"}
+  end
 end
